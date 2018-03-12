@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<script>
+
+    function UserAction() {
+        var data = {data:  $('#css').val()};
+        $.ajax(
+            {
+                type: 'post',
+                url: 'http://localhost:8000',
+                data: data,
+                dataType : 'html',
+                success: function (response) {
+                    $('#convertedCss').val(JSON.parse(JSON.stringify(response)));
+
+                },
+                error: function () {
+                    alert("error");
+                }
+            }
+        );
+
+    }
+</script>
+
+<body>
+
+    <h1>Covert Invision Css to React-native</h1>
+
+</body>
+<label id="test2">CSS</label>
+<textarea  type="text" style="height:200px;font-size:14pt;" id="css" ></textarea>
+<label id="test2">React Native Converted CSS</label>
+<textarea  type="text" style="height:200px;font-size:14pt;" id="convertedCss" /></textarea>
+<label id="test2"></label>
+<br>
+<button type="submit" onclick="UserAction()">Convert</button>
+
+</html>
