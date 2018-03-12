@@ -16,7 +16,7 @@ var express = require('express')
 var cors = require('cors')
 var bodyParser = require('body-parser');
 var app = express()
-
+var port =  process.env.PORT || 8000;
 app.use(cors())
 app.use(bodyParser.urlencoded({
     extended: true
@@ -42,6 +42,6 @@ app.post('/', function (request, response) {
     response.send(styles);
 });
 
-app.listen(8000, function () {
-    console.log('CORS-enabled web server listening on port 8000')
+app.listen(port, function () {
+    console.log('CORS-enabled web server listening on port ') + port
 });
