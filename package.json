@@ -2,6 +2,9 @@
   "name": "nodesample",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "8.9.1"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
